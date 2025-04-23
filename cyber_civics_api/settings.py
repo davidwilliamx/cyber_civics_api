@@ -27,12 +27,13 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv('DEBUG')
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -144,17 +145,17 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    # "http://localhost:3000", # Exemplo para React dev server padrão
-    # "http://127.0.0.1:3000",
-    "http://localhost:8080", # Exemplo para Vue dev server padrão
-    "http://127.0.0.1:8080",
-    # "http://localhost:4200", # Exemplo para Angular dev server padrão
-    # "http://127.0.0.1:4200",
-    "http://localhost:5500", # Exemplo para Live Server do VS Code
-    "http://127.0.0.1:5500",
-    # Adicione aqui a origem exata do seu front-end
-]
+# CORS_ALLOWED_ORIGINS = [
+#     # "http://localhost:3000", # Exemplo para React dev server padrão
+#     # "http://127.0.0.1:3000",
+#     "http://localhost:8080", # Exemplo para Vue dev server padrão
+#     "http://127.0.0.1:8080",
+#     # "http://localhost:4200", # Exemplo para Angular dev server padrão
+#     # "http://127.0.0.1:4200",
+#     "http://localhost:5500", # Exemplo para Live Server do VS Code
+#     "http://127.0.0.1:5500",
+#     # Adicione aqui a origem exata do seu front-end
+# ]
 # Se você abrir o arquivo HTML diretamente no navegador (file://),
 # a origem pode ser nula. Permitir origens nulas é inseguro e não recomendado,
 # mas para testar localmente, você pode adicionar:

@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "cyber_civics_api/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      }],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "cyber_civics_api/wsgi.py"
+      }
+    ]
+  }

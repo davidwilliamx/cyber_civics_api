@@ -86,21 +86,21 @@ WSGI_APPLICATION = 'cyber_civics_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Use dj_database_url para configurar o banco de dados a partir da variável de ambiente DATABASE_URL
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         # default='sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3')), # Opcional: fallback local
-#         conn_max_age=600, # Opcional: gerencia conexões para ambientes como Render
-#         conn_health_checks=True, # Opcional: verifica a saúde das conexões
-#     )
-# }
+DATABASES = {
+    'default': dj_database_url.config(
+        # default='sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3')), # Opcional: fallback local
+        conn_max_age=600, # Opcional: gerencia conexões para ambientes como Render
+        conn_health_checks=True, # Opcional: verifica a saúde das conexões
+    )
+}
 
 
 

@@ -30,6 +30,19 @@ class PollViewSet(viewsets.ModelViewSet):
     serializer_class = PollSerializer
     permission_classes = [IsAuthenticated] # Default: exige autenticação
 
+    def get_queryset(self):
+        """
+        Retorna o queryset apropriado para a ação, pré-buscando choices
+        para listagem e detalhe.
+        """
+        queryset = super().get_queryset() # Obtém o queryset base
+
+        # Para as ações 'list' e 'retrieve', pré-busca os objetos Choice relacionados
+        if self.action in ['list', 'retrieve']:
+            queryset = queryset.prefetch_related('choices')
+
+        return queryset
+
     def get_serializer_class(self):
         """Retorna o serializer apropriado para a ação."""
         if self.action == 'create':

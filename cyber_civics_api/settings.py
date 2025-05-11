@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework', # Adiciona o Django REST Framework
     'rest_framework.authtoken', # Adiciona autenticação por Token
-    'polls', # Adiciona a sua aplicação polls
+    'polls', # Adiciona a aplicação polls
+    'documentation', # Adiciona a aplicação documentation
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = (BASE_DIR/"static/")
+
+# Diretórios onde o Django procurará arquivos estáticos em cada app
+STATICFILES_DIRS = [
+    BASE_DIR / 'static_src', # Adicione o diretório onde você criou styles.css
+]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('polls.urls')), # Inclui as URLs da sua aplicação polls
     path('api/auth/login/', obtain_auth_token, name='api_token_auth'), # Endpoint para login e obter token
+    path('', include('documentation.urls')), # Link para a Documentação
 ]

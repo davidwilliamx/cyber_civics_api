@@ -17,11 +17,11 @@
         <a href="#authentication" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">03 // Autenticação</a>
         <a href="#roles-permissions" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">04 // Papéis e Permissões</a>
         <a href="#endpoints" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">05 // Endpoints</a>
-        <a href="#data-structure" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">06 // Estrutura de Dados</a> {# Próximo link #}
-        <a href="#error-handling" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">07 // Tratamento de Erros</a> {# Próximo link #}
-        <a href="#additional-concepts" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">08 // Conceitos Adicionais</a> {# Próximo link #}
+        <a href="#data-structure" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">06 // Estrutura de Dados</a>
+        <a href="#error-handling" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">07 // Tratamento de Erros</a>
+        <a href="#additional-concepts" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">08 // Conceitos Adicionais</a>
     </nav>
-    
+
     <header class="text-center mb-12">
         <h1 class="text-4xl md:text-6xl font-bold text-neon-pink glitch-effect">
             <span class="block">CYBER CIVICS</span>
@@ -29,7 +29,7 @@
         </h1>
         <p class="mt-4 text-glitch-red">Protocol Online // Version 1.0 // Status: Active</p>
     </header>
-    
+
     <main class="flex-grow container mx-auto">
         <section id="overview" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">01 // Visão Geral</h2>
@@ -37,20 +37,20 @@
                 A API Cyber Civics é a espinha dorsal digital para o gerenciamento de interações cívicas no ciberespaço, utilizando o poder do Django REST Framework. Ela opera em um ecossistema focado em <span class="text-neon-pink font-bold">gerenciamento de usuários</span>, a criação e moderação de <span class="text-neon-pink font-bold">enquetes/propostas digitais</span>, a validação de <span class="text-neon-pink font-bold">votos eletrônicos</span> e a projeção de <span class="text-neon-pink font-bold">resultados em tempo real</span>. Nosso sistema de segurança é estratificado por <span class="text-glitch-red font-bold">papéis de usuário</span> (Administrador e Usuário Comum), garantindo acesso controlado aos dados sensíveis.
             </p>
         </section>
-        
+
         <section id="base-url" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
-            <h2 class="text-3xl font-semibold mb-4 text-neon-pink">02 // URL Base de Acesso</h2>
-            <p class="text-neon-blue/80 mb-4">
-                Todos os pacotes de dados e requisições para os terminais listados adiante devem ser prefixados pela URL base do sistema.
-            </p>
-            <div class="bg-dark-synth p-4 rounded-md overflow-x-auto">
-                <code class="text-glitch-red break-words">http://127.0.0.1:8000/api/</code>
-            </div>
-            <p class="mt-2 text-neon-blue/60 text-sm italic">
-                // Nota do Sistema: Em ambientes de implantação (stage/produção), esta URL sofrerá reconfiguração.
-            </p>
+             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">02 // URL Base de Acesso</h2>
+             <p class="text-neon-blue/80 mb-4">
+                 Todos os pacotes de dados e requisições para os terminais listados adiante devem ser prefixados pela URL base do sistema.
+             </p>
+             <div class="bg-dark-synth p-4 rounded-md overflow-x-auto">
+                 <code class="text-glitch-red break-words">http://127.0.0.1:8000/api/</code>
+             </div>
+             <p class="mt-2 text-neon-blue/60 text-sm italic">
+                 // Nota do Sistema: Em ambientes de implantação (stage/produção), esta URL sofrerá reconfiguração.
+             </p>
         </section>
-        
+
         <section id="authentication" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">03 // Autenticação</h2>
             <p class="text-neon-blue/80 mb-4">
@@ -72,13 +72,13 @@
                 Substitua <code class="text-glitch-red font-bold">SEU_TOKEN_AQUI</code> pelo token recebido após o login.
             </p>
         </section>
-        
+
         <section id="roles-permissions" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">04 // Papéis e Permissões</h2>
             <p class="text-neon-blue/80 mb-4">
                 O acesso aos recursos da API é controlado por um sistema de permissões baseado em <span class="text-neon-pink font-bold">papéis digitais</span>. Existem dois níveis principais de acesso:
             </p>
-            
+
             <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Usuário Comum</h3>
             <p class="text-neon-blue/80 mb-4">
                 O perfil de Usuário Comum possui as seguintes capacidades no sistema:
@@ -95,12 +95,12 @@
                 <li><span class="text-glitch-red font-bold">Não pode</span> modificar ou remover enquetes ou propostas existentes, mesmo as suas próprias propostas.</li>
                 <li><span class="text-glitch-red font-bold">Não pode</span> gerenciar opções de voto de outros usuários ou enquetes oficiais através do endpoint <code class="text-glitch-red">/api/choices/</code> (exceto na criação, como dono da proposta).</li>
             </ul>
-            
+
             <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Administrador (<code class="text-glitch-red">is_staff=True</code>)</h3>
             <p class="text-neon-blue/80 mb-4">
                 O perfil de Administrador detém controle total sobre os recursos da API:
             </p>
-            <ul class="list-disc list-inside text-neon-blue/80 ml-4 mb-6">
+             <ul class="list-disc list-inside text-neon-blue/80 ml-4 mb-6">
                 <li>Pode autenticar-se no sistema.</li>
                 <li>Possui todas as permissões de visualização e votação de um Usuário Comum.</li>
                 <li>Pode <span class="text-neon-pink font-bold">criar novas Enquetes Oficiais</span> (o campo <code class="text-glitch-red">is_proposal</code> é definido automaticamente como <code class="text-glitch-red">false</code>).</li>
@@ -110,15 +110,15 @@
                 <li>Pode finalizar enquetes (definindo o status <code class="text-glitch-red">is_active</code> para <code class="text-glitch-red">false</code>).</li>
             </ul>
         </section>
-        
+
         <section id="endpoints" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
             <h2 class="text-3xl font-semibold mb-6 text-neon-pink">05 // Endpoints da API</h2>
             <p class="text-neon-blue/80 mb-8">
                 Os terminais da API Cyber Civics permitem a interação com os recursos do sistema. Todos os pacotes de dados são transmitidos no formato <span class="text-neon-pink font-bold">JSON</span>.
             </p>
-            
+
             <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.1 Autenticação e Registro</h3>
-            
+
             <div id="endpoint-register" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded mr-3">POST</span>
@@ -132,11 +132,11 @@
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Request Body (JSON):</span></p>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-3">
-                    {
-                        "username": "string", // Obrigatório
-                        "password": "string", // Obrigatório
-                        "email": "string"     // Opcional (formato de email válido)
-                    }
+{
+    "username": "string", // Obrigatório
+    "password": "string", // Obrigatório
+    "email": "string"     // Opcional (formato de email válido)
+}
                 </pre>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -144,24 +144,24 @@
                     <span class="text-neon-blue/80 text-sm">Sucesso no registro.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto mb-3">
-                    {
-                        "username": "string",
-                        "email": "string"
-                    }
+{
+    "username": "string",
+    "email": "string"
+}
                 </pre>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 400 Bad Request</span>
                     <span class="text-neon-blue/80 text-sm">Dados inválidos ou usuário/email já existente.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto">
-                    {
-                        "username": ["Este campo é obrigatório.", "Este usuário já existe."],
-                        "password": ["Este campo é obrigatório."],
-                        "email": ["Insira um endereço de e-mail válido."]
-                    }
+{
+    "username": ["Este campo é obrigatório.", "Este usuário já existe."],
+    "password": ["Este campo é obrigatório."],
+    "email": ["Insira um endereço de e-mail válido."]
+}
                 </pre>
             </div>
-            
+
             <div id="endpoint-login" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded mr-3">POST</span>
@@ -175,10 +175,10 @@
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Request Body (JSON):</span></p>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-3">
-                    {
-                        "username": "string", // Obrigatório
-                        "password": "string"  // Obrigatório
-                    }
+{
+    "username": "string", // Obrigatório
+    "password": "string"  // Obrigatório
+}
                 </pre>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -186,23 +186,23 @@
                     <span class="text-neon-blue/80 text-sm">Sucesso no login.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto mb-3">
-                    {
-                        "token": "string" // O token de autenticação
-                    }
+{
+    "token": "string" // O token de autenticação
+}
                 </pre>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 400 Bad Request</span>
                     <span class="text-neon-blue/80 text-sm">Credenciais inválidas.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto">
-                    {
-                        "non_field_errors": ["Não foi possível fazer o login com as credenciais fornecidas."]
-                    }
+{
+    "non_field_errors": ["Não foi possível fazer o login com as credenciais fornecidas."]
+}
                 </pre>
             </div>
-            
+
             <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.2 Gerenciamento de Enquetes/Propostas</h3>
-            
+
             <div id="endpoint-list-polls" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-blue-600 text-white text-sm font-bold rounded mr-3">GET</span>
@@ -215,10 +215,10 @@
                     <span class="font-semibold">Permissões:</span> Usuário Autenticado (<code class="text-glitch-red">IsAuthenticated</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> Nenhum.
+                     <span class="font-semibold">URL Parameters:</span> Nenhum.
                 </p>
-                <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">Request Body:</span> Nenhum.
+                 <p class="text-neon-blue/80 mb-3">
+                     <span class="font-semibold">Request Body:</span> Nenhum.
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -226,38 +226,38 @@
                     <span class="text-neon-blue/80 text-sm">Lista de enquetes/propostas.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    [
-                    {
-                        "id": integer,
-                        "title": "string",
-                        "description": "string",
-                        "created_by": "string", // Nome de usuário do criador
-                        "created_at": "datetime",
-                        "deadline": "datetime or null",
-                        "is_active": boolean,
-                        "is_proposal": boolean,
-                        "choices": [ // Lista de opções de voto associadas (apenas ID e texto)
-                        {
-                            "id": integer,
-                            "choice_text": "string"
-                        }
-                        // ...
-                        ]
-                    }
-                    // ... mais objetos Poll/Proposal
-                    ]
+[
+    {
+        "id": integer,
+        "title": "string",
+        "description": "string",
+        "created_by": "string", // Nome de usuário do criador
+        "created_at": "datetime",
+        "deadline": "datetime or null",
+        "is_active": boolean,
+        "is_proposal": boolean,
+        "choices": [ // Lista de opções de voto associadas (apenas ID e texto)
+            {
+                "id": integer,
+                "choice_text": "string"
+            }
+            // ...
+        ]
+    }
+    // ... mais objetos Poll/Proposal
+]
                 </pre>
-                <div class="mt-3 mb-2">
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token de autenticação não fornecido ou inválido.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto">
-                    {
-                        "detail": "Authentication credentials were not provided."
-                    }
+{
+    "detail": "Authentication credentials were not provided."
+}
                 </pre>
             </div>
-            
+
             <div id="endpoint-create-poll" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded mr-3">POST</span>
@@ -271,11 +271,11 @@
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Request Body (JSON):</span></p>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-3">
-                    {
-                        "title": "string",         // Obrigatório
-                        "description": "string",   // Obrigatório
-                        "deadline": "datetime or null" // Opcional para propostas, recomendado para enquetes
-                    }
+{
+    "title": "string",         // Obrigatório
+    "description": "string",   // Obrigatório
+    "deadline": "datetime or null" // Opcional para propostas, recomendado para enquetes
+}
                 </pre>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -283,33 +283,33 @@
                     <span class="text-neon-blue/80 text-sm">Sucesso na criação.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {
-                        "id": integer,
-                        "title": "string",
-                        "description": "string",
-                        "created_by": "string", // Nome de usuário do criador
-                        "created_at": "datetime",
-                        "deadline": "datetime or null",
-                        "is_active": boolean, // Geralmente true na criação
-                        "is_proposal": boolean, // true para propostas, false para enquetes
-                        "choices": [ // Lista das opções padrão adicionadas automaticamente
-                        { "id": integer, "choice_text": "Concordo" },
-                        { "id": integer, "choice_text": "Discordo" },
-                        { "id": integer, "choice_text": "Neutro" }
-                        ]
-                    }
+{
+    "id": integer,
+    "title": "string",
+    "description": "string",
+    "created_by": "string", // Nome de usuário do criador
+    "created_at": "datetime",
+    "deadline": "datetime or null",
+    "is_active": boolean, // Geralmente true na criação
+    "is_proposal": boolean, // true para propostas, false para enquetes
+    "choices": [ // Lista das opções padrão adicionadas automaticamente
+         { "id": integer, "choice_text": "Concordo" },
+         { "id": integer, "choice_text": "Discordo" },
+         { "id": integer, "choice_text": "Neutro" }
+    ]
+}
                 </pre>
                 {# Adicionar Status 400 e 401 #}
-                <div class="mt-3 mb-2">
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 400 Bad Request</span>
                     <span class="text-neon-blue/80 text-sm">Dados inválidos.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
             </div>
-            
+
             <div id="endpoint-retrieve-poll" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-blue-600 text-white text-sm font-bold rounded mr-3">GET</span>
@@ -322,10 +322,10 @@
                     <span class="font-semibold">Permissões:</span> Usuário Autenticado (<code class="text-glitch-red">IsAuthenticated</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
                 </p>
-                <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">Request Body:</span> Nenhum.
+                 <p class="text-neon-blue/80 mb-3">
+                     <span class="font-semibold">Request Body:</span> Nenhum.
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -333,33 +333,33 @@
                     <span class="text-neon-blue/80 text-sm">Detalhes da enquete/proposta.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {
-                        "id": integer,
-                        "title": "string",
-                        "description": "string",
-                        "created_by": "string", // Nome de usuário do criador
-                        "created_at": "datetime",
-                        "deadline": "datetime or null",
-                        "is_active": boolean, // Geralmente true na criação
-                        "is_proposal": boolean, // true para propostas, false para enquetes
-                        "choices": [ // Lista das opções padrão adicionadas automaticamente
-                        { "id": integer, "choice_text": "Concordo" },
-                        { "id": integer, "choice_text": "Discordo" },
-                        { "id": integer, "choice_text": "Neutro" }
-                        ]
-                    }
+{
+    "id": integer,
+    "title": "string",
+    "description": "string",
+    "created_by": "string", // Nome de usuário do criador
+    "created_at": "datetime",
+    "deadline": "datetime or null",
+    "is_active": boolean, // Geralmente true na criação
+    "is_proposal": boolean, // true para propostas, false para enquetes
+    "choices": [ // Lista das opções padrão adicionadas automaticamente
+         { "id": integer, "choice_text": "Concordo" },
+         { "id": integer, "choice_text": "Discordo" },
+         { "id": integer, "choice_text": "Neutro" }
+    ]
+}
                 </pre>
-                {# Adicionar Status 401 e 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 401 e 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Enquete/proposta com o ID especificado não encontrada.</span>
                 </div>
             </div>
-            
+
             <div id="endpoint-update-poll" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-yellow-600 text-white text-sm font-bold rounded mr-3">PUT</span>
@@ -372,15 +372,15 @@
                     <span class="font-semibold">Permissões:</span> <span class="font-bold text-glitch-red">APENAS Administrador</span> (<code class="text-glitch-red">IsAdminOnly</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Request Body (JSON):</span></p>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-3">
-                    {
-                        "title": "string",
-                        "description": "string",
-                        "deadline": "datetime or null"
-                    }
+{
+    "title": "string",
+    "description": "string",
+    "deadline": "datetime or null"
+}
                 </pre>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -388,42 +388,42 @@
                     <span class="text-neon-blue/80 text-sm">Sucesso na atualização.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {# Mesmo formato do GET detail #}
-                    {
-                        "id": integer,
-                        "title": "string",
-                        "description": "string",
-                        "created_by": "string",
-                        "created_at": "datetime",
-                        "deadline": "datetime or null",
-                        "is_active": boolean,
-                        "is_proposal": boolean,
-                        "choices": [
-                        { "id": integer, "choice_text": "Concordo" },
-                        { "id": integer, "choice_text": "Discordo" },
-                        { "id": integer, "choice_text": "Neutro" }
-                        ]
-                    }
+{# Mesmo formato do GET detail #}
+{
+    "id": integer,
+    "title": "string",
+    "description": "string",
+    "created_by": "string",
+    "created_at": "datetime",
+    "deadline": "datetime or null",
+    "is_active": boolean,
+    "is_proposal": boolean,
+    "choices": [
+         { "id": integer, "choice_text": "Concordo" },
+         { "id": integer, "choice_text": "Discordo" },
+         { "id": integer, "choice_text": "Neutro" }
+    ]
+}
                 </pre>
-                {# Adicionar Status 400, 401, 403, 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 400, 401, 403, 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 400 Bad Request</span>
                     <span class="text-neon-blue/80 text-sm">Dados inválidos.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 403 Forbidden</span>
                     <span class="text-neon-blue/80 text-sm">Usuário não é administrador.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Objeto não encontrado.</span>
                 </div>
             </div>
-            
+
             <div id="endpoint-partial-update-poll" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-yellow-600 text-white text-sm font-bold rounded mr-3">PATCH</span>
@@ -436,15 +436,15 @@
                     <span class="font-semibold">Permissões:</span> <span class="font-bold text-glitch-red">APENAS Administrador</span> (<code class="text-glitch-red">IsAdminOnly</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Request Body (JSON):</span></p>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-3">
-                    {
-                        "title": "string (novo título)",
-                        "is_active": false // Exemplo: para finalizar uma enquete
-                        // ... ou apenas os campos que deseja alterar
-                    }
+{
+    "title": "string (novo título)",
+    "is_active": false // Exemplo: para finalizar uma enquete
+    // ... ou apenas os campos que deseja alterar
+}
                 </pre>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -452,42 +452,42 @@
                     <span class="text-neon-blue/80 text-sm">Sucesso na atualização.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {# Mesmo formato do GET detail #}
-                    {
-                        "id": integer,
-                        "title": "string",
-                        "description": "string",
-                        "created_by": "string",
-                        "created_at": "datetime",
-                        "deadline": "datetime or null",
-                        "is_active": boolean,
-                        "is_proposal": boolean,
-                        "choices": [
-                        { "id": integer, "choice_text": "Concordo" },
-                        { "id": integer, "choice_text": "Discordo" },
-                        { "id": integer, "choice_text": "Neutro" }
-                        ]
-                    }
+{# Mesmo formato do GET detail #}
+{
+    "id": integer,
+    "title": "string",
+    "description": "string",
+    "created_by": "string",
+    "created_at": "datetime",
+    "deadline": "datetime or null",
+    "is_active": boolean,
+    "is_proposal": boolean,
+    "choices": [
+         { "id": integer, "choice_text": "Concordo" },
+         { "id": integer, "choice_text": "Discordo" },
+         { "id": integer, "choice_text": "Neutro" }
+    ]
+}
                 </pre>
-                {# Adicionar Status 400, 401, 403, 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 400, 401, 403, 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 400 Bad Request</span>
                     <span class="text-neon-blue/80 text-sm">Dados inválidos.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 403 Forbidden</span>
                     <span class="text-neon-blue/80 text-sm">Usuário não é administrador.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Objeto não encontrado.</span>
                 </div>
             </div>
-            
+
             <div id="endpoint-delete-poll" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-red-600 text-white text-sm font-bold rounded mr-3">DELETE</span>
@@ -500,34 +500,34 @@
                     <span class="font-semibold">Permissões:</span> <span class="font-bold text-glitch-red">APENAS Administrador</span> (<code class="text-glitch-red">IsAdminOnly</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
                 </p>
-                <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">Request Body:</span> Nenhum.
+                 <p class="text-neon-blue/80 mb-3">
+                     <span class="font-semibold">Request Body:</span> Nenhum.
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body:</span></p>
                 <div class="mb-2">
                     <span class="px-2 py-1 bg-green-500 text-white text-xs font-bold rounded mr-2">Status 204 No Content</span>
                     <span class="text-neon-blue/80 text-sm">Sucesso na exclusão.</span>
                 </div>
-                {# Adicionar Status 401, 403, 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 401, 403, 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 403 Forbidden</span>
                     <span class="text-neon-blue/80 text-sm">Usuário não é administrador.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Objeto não encontrado.</span>
                 </div>
             </div>
-            
-            
+
+
             <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.3 Gerenciamento de Opções de Voto (Choices)</h3>
-            
+
             <div id="endpoint-create-choice" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded mr-3">POST</span>
@@ -541,10 +541,10 @@
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Request Body (JSON):</span></p>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-3">
-                    {
-                        "poll": integer,      // O ID da enquete/proposta à qual a opção pertence (Obrigatório)
-                        "choice_text": "string" // O texto da opção (Obrigatório)
-                    }
+{
+    "poll": integer,      // O ID da enquete/proposta à qual a opção pertence (Obrigatório)
+    "choice_text": "string" // O texto da opção (Obrigatório)
+}
                 </pre>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -552,27 +552,27 @@
                     <span class="text-neon-blue/80 text-sm">Sucesso na criação.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {
-                        "id": integer,
-                        "choice_text": "string",
-                        "poll": integer // ID da enquete/proposta associada
-                    }
+{
+    "id": integer,
+    "choice_text": "string",
+    "poll": integer // ID da enquete/proposta associada
+}
                 </pre>
-                {# Adicionar Status 400, 401, 403 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 400, 401, 403 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 400 Bad Request</span>
                     <span class="text-neon-blue/80 text-sm">Dados inválidos.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 403 Forbidden</span>
                     <span class="text-neon-blue/80 text-sm">Usuário comum tentando criar opção para enquete de admin ou proposta de outro usuário.</span>
                 </div>
             </div>
-            
+
             <div id="endpoint-list-choices" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-blue-600 text-white text-sm font-bold rounded mr-3">GET</span>
@@ -585,7 +585,7 @@
                     <span class="font-semibold">Permissões:</span> <span class="font-bold text-glitch-red">APENAS Administrador</span> (<code class="text-glitch-red">IsAdminOnly</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">Request Body:</span> Nenhum.
+                     <span class="font-semibold">Request Body:</span> Nenhum.
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -593,26 +593,26 @@
                     <span class="text-neon-blue/80 text-sm">Lista de opções.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    [
-                    {
-                        "id": integer,
-                        "choice_text": "string",
-                        "poll": integer // ID da enquete/proposta associada
-                    }
-                    // ... mais objetos Choice
-                    ]
+[
+    {
+        "id": integer,
+        "choice_text": "string",
+        "poll": integer // ID da enquete/proposta associada
+    }
+    // ... mais objetos Choice
+]
                 </pre>
-                {# Adicionar Status 401, 403 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 401, 403 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 403 Forbidden</span>
                     <span class="text-neon-blue/80 text-sm">Usuário não é administrador.</span>
                 </div>
             </div>
-            
+
             <div id="endpoint-retrieve-choice" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-blue-600 text-white text-sm font-bold rounded mr-3">GET</span>
@@ -625,10 +625,10 @@
                     <span class="font-semibold">Permissões:</span> <span class="font-bold text-glitch-red">APENAS Administrador</span> (<code class="text-glitch-red">IsAdminOnly</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da opção (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da opção (integer).
                 </p>
-                <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">Request Body:</span> Nenhum.
+                 <p class="text-neon-blue/80 mb-3">
+                     <span class="font-semibold">Request Body:</span> Nenhum.
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -636,27 +636,27 @@
                     <span class="text-neon-blue/80 text-sm">Detalhes da opção.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {
-                        "id": integer,
-                        "choice_text": "string",
-                        "poll": integer // ID da enquete/proposta associada
-                    }
+{
+    "id": integer,
+    "choice_text": "string",
+    "poll": integer // ID da enquete/proposta associada
+}
                 </pre>
-                {# Adicionar Status 401, 403, 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 401, 403, 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 403 Forbidden</span>
                     <span class="text-neon-blue/80 text-sm">Usuário não é administrador.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Objeto não encontrado.</span>
                 </div>
             </div>
-            
+
             <div id="endpoint-update-choice" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-yellow-600 text-white text-sm font-bold rounded mr-3">PUT/PATCH</span>
@@ -669,14 +669,14 @@
                     <span class="font-semibold">Permissões:</span> <span class="font-bold text-glitch-red">APENAS Administrador</span> (<code class="text-glitch-red">IsAdminOnly</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da opção (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da opção (integer).
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Request Body (JSON):</span></p>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-3">
-                    {
-                        "choice_text": "string (novo texto)"
-                        // "poll" pode ser incluído mas geralmente não é alterado após a criação
-                    }
+{
+    "choice_text": "string (novo texto)"
+    // "poll" pode ser incluído mas geralmente não é alterado após a criação
+}
                 </pre>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -684,32 +684,32 @@
                     <span class="text-neon-blue/80 text-sm">Sucesso na atualização.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {# Mesmo formato do GET detail #}
-                    {
-                        "id": integer,
-                        "choice_text": "string",
-                        "poll": integer // ID da enquete/proposta associada
-                    }
+{# Mesmo formato do GET detail #}
+{
+    "id": integer,
+    "choice_text": "string",
+    "poll": integer // ID da enquete/proposta associada
+}
                 </pre>
-                {# Adicionar Status 400, 401, 403, 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 400, 401, 403, 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 400 Bad Request</span>
                     <span class="text-neon-blue/80 text-sm">Dados inválidos.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 403 Forbidden</span>
                     <span class="text-neon-blue/80 text-sm">Usuário não é administrador.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Objeto não encontrado.</span>
                 </div>
             </div>
-            
+
             <div id="endpoint-delete-choice" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-red-600 text-white text-sm font-bold rounded mr-3">DELETE</span>
@@ -722,34 +722,34 @@
                     <span class="font-semibold">Permissões:</span> <span class="font-bold text-glitch-red">APENAS Administrador</span> (<code class="text-glitch-red">IsAdminOnly</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da opção (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da opção (integer).
                 </p>
-                <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">Request Body:</span> Nenhum.
+                 <p class="text-neon-blue/80 mb-3">
+                     <span class="font-semibold">Request Body:</span> Nenhum.
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body:</span></p>
                 <div class="mb-2">
                     <span class="px-2 py-1 bg-green-500 text-white text-xs font-bold rounded mr-2">Status 204 No Content</span>
                     <span class="text-neon-blue/80 text-sm">Sucesso na exclusão.</span>
                 </div>
-                {# Adicionar Status 401, 403, 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 401, 403, 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 403 Forbidden</span>
                     <span class="text-neon-blue/80 text-sm">Usuário não é administrador.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Objeto não encontrado.</span>
                 </div>
             </div>
-            
-            
+
+
             <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.4 Votação</h3>
-            
+
             <div id="endpoint-vote" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-green-600 text-white text-sm font-bold rounded mr-3">POST</span>
@@ -762,13 +762,13 @@
                     <span class="font-semibold">Permissões:</span> Usuário Autenticado (<code class="text-glitch-red">IsAuthenticated</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta a ser votada (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta a ser votada (integer).
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Request Body (JSON):</span></p>
                 <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-3">
-                    {
-                        "choice": integer // O ID da opção de voto escolhida (Obrigatório)
-                    }
+{
+    "choice": integer // O ID da opção de voto escolhida (Obrigatório)
+}
                 </pre>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -776,31 +776,31 @@
                     <span class="text-neon-blue/80 text-sm">Sucesso no voto registrado.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {
-                        "id": integer, // ID do registro de voto
-                        "choice": integer, // ID da opção votada
-                        "user": "string", // Nome de usuário que votou
-                        "voted_at": "datetime" // Timestamp do voto
-                        // Nota: O campo 'poll' não é incluído no retorno por padrão no serializer
-                    }
+{
+    "id": integer, // ID do registro de voto
+    "choice": integer, // ID da opção votada
+    "user": "string", // Nome de usuário que votou
+    "voted_at": "datetime" // Timestamp do voto
+    // Nota: O campo 'poll' não é incluído no retorno por padrão no serializer
+}
                 </pre>
-                {# Adicionar Status 400, 401, 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 400, 401, 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 400 Bad Request</span>
                     <span class="text-neon-blue/80 text-sm">Voto inválido (ex: opção não pertence à enquete, enquete inativa/expirada, usuário já votou).</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Enquete com o ID especificado não encontrada.</span>
                 </div>
             </div>
-            
-            <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.5 Visualização de Resultados</h3>
-            
+
+             <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.5 Visualização de Resultados</h3>
+
             <div id="endpoint-results" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-blue-600 text-white text-sm font-bold rounded mr-3">GET</span>
@@ -813,10 +813,10 @@
                     <span class="font-semibold">Permissões:</span> Usuário Autenticado (<code class="text-glitch-red">IsAuthenticated</code>).
                 </p>
                 <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
+                     <span class="font-semibold">URL Parameters:</span> <code class="text-glitch-red">{id}</code> - O ID da enquete/proposta (integer).
                 </p>
-                <p class="text-neon-blue/80 mb-3">
-                    <span class="font-semibold">Request Body:</span> Nenhum.
+                 <p class="text-neon-blue/80 mb-3">
+                     <span class="font-semibold">Request Body:</span> Nenhum.
                 </p>
                 <p class="text-neon-blue/80 mb-2"><span class="font-semibold">Response Body (JSON):</span></p>
                 <div class="mb-2">
@@ -824,33 +824,191 @@
                     <span class="text-neon-blue/80 text-sm">Resultados da votação.</span>
                 </div>
                 <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
-                    {
-                        "poll_id": integer,
-                        "poll_title": "string",
-                        "total_votes": integer, // Total de votos nesta enquete
-                        "choices_results": [ // Lista de resultados por opção
-                        {
-                            "choice_text": "string",
-                            "vote_count": integer, // Total de votos para esta opção
-                            "percentage": "float" // Porcentagem do total de votos da enquete
-                        }
-                        // ... resultados para outras opções
-                        ],
-                        "is_active": boolean,
-                        "deadline": "datetime or null"
-                    }
+{
+    "poll_id": integer,
+    "poll_title": "string",
+    "total_votes": integer, // Total de votos nesta enquete
+    "choices_results": [ // Lista de resultados por opção
+        {
+            "choice_text": "string",
+            "vote_count": integer, // Total de votos para esta opção
+            "percentage": "float" // Porcentagem do total de votos da enquete
+        }
+        // ... resultados para outras opções
+    ],
+    "is_active": boolean,
+    "deadline": "datetime or null"
+}
                 </pre>
-                {# Adicionar Status 401, 404 #}
-                <div class="mt-3 mb-2">
+                 {# Adicionar Status 401, 404 #}
+                 <div class="mt-3 mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 401 Unauthorized</span>
                     <span class="text-neon-blue/80 text-sm">Token ausente/inválido.</span>
                 </div>
-                <div class="mb-2">
+                 <div class="mb-2">
                     <span class="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded mr-2">Status 404 Not Found</span>
                     <span class="text-neon-blue/80 text-sm">Enquete com o ID especificado não encontrada.</span>
                 </div>
             </div>
-            
+
+        </section>
+
+        <section id="data-structure" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
+            <h2 class="text-3xl font-semibold mb-4 text-neon-pink">06 // Estrutura de Dados</h2>
+            <p class="text-neon-blue/80 mb-4">
+                Esta seção descreve a estrutura dos pacotes de dados <span class="text-neon-pink font-bold">JSON</span> frequentemente transmitidos nas respostas da API, serializados a partir dos modelos internos do sistema.
+            </p>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Poll/Proposal Object</h3>
+            <p class="text-neon-blue/80 mb-2">
+                Representa uma enquete ou proposta. Inclui metadados, criador, status, tipo e opções associadas.
+            </p>
+            <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto mb-6">
+{
+    "id": integer, // ID único
+    "title": "string",
+    "description": "string",
+    "created_by": "string", // username do criador
+    "created_at": "datetime",
+    "deadline": "datetime or null",
+    "is_active": boolean, // Se está aberta para votação
+    "is_proposal": boolean, // Se é uma proposta (true) ou enquete oficial (false)
+    "choices": [ // Lista de Choice Objects associados (em GET /api/polls/ e /api/polls/{id}/)
+        {
+            "id": integer,
+            "choice_text": "string"
+        }
+        // ...
+    ]
+}
+            </pre>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Choice Object</h3>
+            <p class="text-neon-blue/80 mb-2">
+                Representa uma opção de voto.
+            </p>
+            <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto mb-6">
+{
+    "id": integer, // ID único
+    "choice_text": "string", // O texto da opção
+    "poll": integer // ID da Poll/Proposal associada
+}
+            </pre>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Vote Object</h3>
+            <p class="text-neon-blue/80 mb-2">
+                Representa um voto individual registrado (visto principalmente no retorno de <code class="text-glitch-red">POST /api/polls/{id}/vote/</code>).
+            </p>
+            <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto mb-6">
+{
+    "id": integer, // ID único do registro de voto
+    "choice": integer, // ID da opção votada
+    "user": "string", // username do usuário que votou
+    "voted_at": "datetime" // Timestamp do voto
+    // poll ID associado está implícito pelo endpoint de votação
+}
+            </pre>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Result Item Object</h3>
+            <p class="text-neon-blue/80 mb-2">
+                Representa o resultado agregado para uma única opção de voto (visto em <code class="text-glitch-red">GET /api/polls/{id}/results/</code>).
+            </p>
+            <pre class="bg-dark-synth p-3 rounded-md text-neon-blue text-sm overflow-x-auto">
+{
+    "choice_text": "string", // O texto da opção
+    "vote_count": integer, // Número de votos para esta opção
+    "percentage": "float" // Porcentagem do total de votos da enquete
+}
+            </pre>
+        </section>
+
+        <section id="error-handling" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
+            <h2 class="text-3xl font-semibold mb-4 text-neon-pink">07 // Tratamento de Erros Comuns</h2>
+            <p class="text-neon-blue/80 mb-4">
+                A API segue os códigos de status <span class="text-neon-pink font-bold">HTTP padrão</span> para indicar o resultado das requisições. Em caso de falha, o corpo da resposta geralmente conterá detalhes em formato <span class="text-neon-pink font-bold">JSON</span> explicando a natureza do problema.
+            </p>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 400 Bad Request</h3>
+            <p class="text-neon-blue/80 mb-2">
+                Indica que a requisição é inválida devido a dados incorretos, formato inadequado ou falha em validações de negócio (ex: votar em enquete inativa, votar duas vezes). O corpo da resposta conterá detalhes sobre o erro.
+            </p>
+            <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-6">
+{
+    "campo_com_erro": ["Mensagem de erro específica."],
+    "non_field_errors": ["Mensagem de erro geral."]
+}
+            </pre>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 401 Unauthorized</h3>
+            <p class="text-neon-blue/80 mb-2">
+                Ocorre quando a requisição exige autenticação, mas nenhum token válido foi fornecido no cabeçalho <code class="text-glitch-red">Authorization</code>.
+            </p>
+            <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-6">
+{
+    "detail": "Authentication credentials were not provided."
+}
+            </pre>
+            <p class="text-neon-blue/80 mb-2">Ou variações:</p>
+             <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-6">
+{
+     "detail": "Invalid token header. No credentials provided."
+}
+            </pre>
+             <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-6">
+{
+    "detail": "Invalid token header. Token string should not contain spaces."
+}
+            </pre>
+
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 403 Forbidden</h3>
+            <p class="text-neon-blue/80 mb-2">
+                Indica que o usuário autenticado não possui permissão para executar a ação solicitada no recurso específico (ex: usuário comum tentando excluir uma enquete de administrador).
+            </p>
+             <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-6">
+{
+    "detail": "You do not have permission to perform this action."
+}
+            </pre>
+            <p class="text-neon-blue/80 mb-2">Ou mensagens personalizadas:</p>
+             <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto mb-6">
+{
+    "detail": "Você só pode adicionar opções a propostas que você criou."
+}
+            </pre>
+
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 404 Not Found</h3>
+            <p class="text-neon-blue/80 mb-2">
+                Ocorre quando o recurso solicitado (ex: uma enquete com um ID específico) não foi localizado no sistema.
+            </p>
+             <pre class="bg-dark-synth p-3 rounded-md text-glitch-red text-sm overflow-x-auto">
+{
+    "detail": "Não encontrado."
+}
+            </pre>
+        </section>
+
+        <section id="additional-concepts" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
+            <h2 class="text-3xl font-semibold mb-4 text-neon-pink">08 // Conceitos Adicionais</h2>
+            <p class="text-neon-blue/80 mb-4">
+                Alguns conceitos fundamentais para entender a arquitetura e o funcionamento da API Cyber Civics:
+            </p>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Poll vs. Proposal</h3>
+            <p class="text-neon-blue/80 mb-4">
+                No back-end, ambos são representados pelo mesmo modelo de dados (<code class="text-glitch-red">Poll</code>). A distinção entre uma enquete oficial e uma proposta de usuário é feita através do campo booleano <code class="text-glitch-red">is_proposal</code> (<code class="text-glitch-red">false</code> para enquetes criadas por Administradores, <code class="text-glitch-red">true</code> para propostas criadas por Usuários Comuns).
+            </p>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Options (Choices)</h3>
+            <p class="text-neon-blue/80 mb-4">
+                As opções de voto são representadas pelo modelo <code class="text-glitch-red">Choice</code>. Cada opção está associada a uma <code class="text-glitch-red">Poll</code> específica. Opções padrão como "Concordo", "Discordo" e "Neutro" são automaticamente adicionadas ao criar uma nova enquete ou proposta.
+            </p>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Votes</h3>
+            <p class="text-neon-blue/80 mb-4">
+                O modelo <code class="text-glitch-red">Vote</code> registra cada voto individual. Ele conecta um <code class="text-glitch-red">User</code> a uma <code class="text-glitch-red">Choice</code> específica dentro de uma <code class="text-glitch-red">Poll</code>. A regra de negócio garante que um usuário só possa registrar um voto por enquete/proposta.
+            </p>
         </section>
         
         

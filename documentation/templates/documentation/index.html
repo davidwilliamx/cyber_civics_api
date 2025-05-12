@@ -9,28 +9,127 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"> {# Ajuste o caminho se style.css estiver em outro local #}
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-<body class="bg-deep-space text-neon-blue font-cyber leading-relaxed p-6 min-h-screen flex flex-col pt-20">
-    
-    <nav class="fixed top-0 left-0 w-full bg-deep-space bg-opacity-90 backdrop-blur-sm z-50 p-4 flex justify-center items-center border-b border-neon-blue/30">
-        <a href="#overview" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">01 // Visão Geral</a>
-        <a href="#base-url" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">02 // URL Base</a>
-        <a href="#authentication" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">03 // Autenticação</a>
-        <a href="#roles-permissions" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">04 // Papéis e Permissões</a>
-        <a href="#endpoints" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">05 // Endpoints</a>
-        <a href="#data-structure" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">06 // Estrutura de Dados</a>
-        <a href="#error-handling" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">07 // Tratamento de Erros</a>
-        <a href="#additional-concepts" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">08 // Conceitos Adicionais</a>
-    </nav>
+<body class="bg-deep-space text-neon-blue font-cyber leading-relaxed min-h-screen flex"> {# Remove p-6 e pt-20, adiciona flex #}
 
-    <header class="text-center mb-12">
-        <h1 class="text-4xl md:text-6xl font-bold text-neon-pink glitch-effect">
-            <span class="block">CYBER CIVICS</span>
-            <span class="block text-2xl md:text-3xl text-neon-blue mt-2">// API Documentation</span>
-        </h1>
-        <p class="mt-4 text-glitch-red">Protocol Online // Version 1.0 // Status: Active</p>
-    </header>
+    <aside class="sidebar fixed top-0 left-0 h-screen w-64 bg-deep-space bg-opacity-90 backdrop-blur-sm z-50 p-6 overflow-y-auto border-r border-neon-blue/30 md:flex md:flex-col"> {# Adiciona md:flex md:flex-col #}
+        <div class="text-center mb-8">
+             <h2 class="text-2xl font-bold text-neon-pink">CYBER DOCS</h2>
+             <p class="text-neon-blue/60 text-sm">// Protocolos</p>
+        </div>
 
-    <main class="flex-grow container mx-auto">
+        <nav class="flex flex-col space-y-3"> {# Adiciona flex-col e space-y #}
+            <a href="#overview" class="text-neon-blue hover:text-neon-pink font-bold transition duration-300 ease-in-out">01 // Visão Geral</a>
+            <a href="#base-url" class="text-neon-blue hover:text-neon-pink font-bold transition duration-300 ease-in-out">02 // URL Base</a>
+            <a href="#authentication" class="text-neon-blue hover:text-neon-pink font-bold transition duration-300 ease-in-out">03 // Autenticação</a>
+            <a href="#roles-permissions" class="text-neon-blue hover:text-neon-pink font-bold transition duration-300 ease-in-out">04 // Papéis e Permissões</a>
+
+            <div class="mt-4 pt-4 border-t border-neon-blue/20"> {# Separador visual #}
+                <div class="flex justify-between items-center mb-2"> {# Flexbox para alinhar link e botão #}
+                    <a href="#endpoints" class="text-neon-pink hover:text-neon-blue font-bold transition duration-300 ease-in-out block flex-grow">05 // Endpoints</a> {# flex-grow para ocupar espaço #}
+                    <button class="submenu-toggle text-neon-blue hover:text-neon-pink transition duration-300 ease-in-out">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /> {# Ícone de seta para baixo #}
+                        </svg>
+                    </button>
+                </div>
+                <ul class="submenu ml-4 space-y-2 text-neon-blue/80 text-sm"> {# Submenu para endpoints #}
+                    <li><a href="#endpoint-auth" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.1 Autenticação/Registro</a></li> {# Atualizado link para sub-seção #}
+                    <li><a href="#endpoint-login" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.1 Login</a></li>
+                    <li><a href="#endpoint-polls" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.2 Gerenciamento de Enquetes/Propostas</a></li> {# Atualizado link para sub-seção #}
+                    <li><a href="#endpoint-create-poll" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.2 Criar Enquete/Proposta</a></li>
+                    <li><a href="#endpoint-retrieve-poll" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.2 Detalhe Enquete/Proposta</a></li>
+                     <li><a href="#endpoint-update-poll" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.2 Atualizar Enquete/Proposta</a></li>
+                    <li><a href="#endpoint-partial-update-poll" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.2 Atualizar Parcial Enquete/Proposta</a></li>
+                     <li><a href="#endpoint-delete-poll" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.2 Excluir Enquete/Proposta</a></li>
+                    <li><a href="#endpoint-choices" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.3 Gerenciamento de Opções</a></li> {# Atualizado link para sub-seção #}
+                    <li><a href="#endpoint-create-choice" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.3 Criar Opção</a></li>
+                    <li><a href="#endpoint-list-choices" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.3 Listar Opções</a></li>
+                    <li><a href="#endpoint-retrieve-choice" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.3 Detalhe Opção</a></li>
+                    <li><a href="#endpoint-update-choice" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.3 Atualizar Opção</a></li>
+                    <li><a href="#endpoint-delete-choice" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.3 Excluir Opção</a></li>
+                    <li><a href="#endpoint-voting" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.4 Votação</a></li> {# Atualizado link para sub-seção #}
+                    <li><a href="#endpoint-results" class="hover:text-neon-pink transition duration-300 ease-in-out block">5.5 Resultados</a></li> {# Atualizado link para sub-seção #}
+                </ul>
+            </div>
+
+             <div class="mt-4 pt-4 border-t border-neon-blue/20"> {# Separador visual #}
+                <div class="flex justify-between items-center mb-2"> {# Flexbox para alinhar link e botão #}
+                    <a href="#data-structure" class="text-neon-blue hover:text-neon-pink font-bold transition duration-300 ease-in-out block flex-grow">06 // Estrutura de Dados</a>
+                     <button class="submenu-toggle text-neon-blue hover:text-neon-pink transition duration-300 ease-in-out">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+                 <ul class="submenu ml-4 space-y-2 text-neon-blue/80 text-sm">
+                    <li><a href="#data-structure-poll" class="hover:text-neon-pink transition duration-300 ease-in-out block">Poll/Proposal Object</a></li> {# Links para IDs específicos dentro da seção #}
+                    <li><a href="#data-structure-choice" class="hover:text-neon-pink transition duration-300 ease-in-out block">Choice Object</a></li>
+                    <li><a href="#data-structure-vote" class="hover:text-neon-pink transition duration-300 ease-in-out block">Vote Object</a></li>
+                    <li><a href="#data-structure-result" class="hover:text-neon-pink transition duration-300 ease-in-out block">Result Item Object</a></li>
+                 </ul>
+             </div>
+
+             <div class="mt-4 pt-4 border-t border-neon-blue/20"> {# Separador visual #}
+                <div class="flex justify-between items-center mb-2"> {# Flexbox para alinhar link e botão #}
+                    <a href="#error-handling" class="text-neon-blue hover:text-neon-pink font-bold transition duration-300 ease-in-out block flex-grow">07 // Tratamento de Erros</a>
+                     <button class="submenu-toggle text-neon-blue hover:text-neon-pink transition duration-300 ease-in-out">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+                 <ul class="submenu ml-4 space-y-2 text-neon-blue/80 text-sm">
+                     <li><a href="#error-400" class="hover:text-neon-pink transition duration-300 ease-in-out block">400 Bad Request</a></li> {# Links para IDs específicos dentro da seção #}
+                     <li><a href="#error-401" class="hover:text-neon-pink transition duration-300 ease-in-out block">401 Unauthorized</a></li>
+                     <li><a href="#error-403" class="hover:text-neon-pink transition duration-300 ease-in-out block">403 Forbidden</a></li>
+                     <li><a href="#error-404" class="hover:text-neon-pink transition duration-300 ease-in-out block">404 Not Found</a></li>
+                 </ul>
+             </div>
+
+             <div class="mt-4 pt-4 border-t border-neon-blue/20"> {# Separador visual #}
+                <div class="flex justify-between items-center mb-2"> {# Flexbox para alinhar link e botão #}
+                    <a href="#additional-concepts" class="text-neon-blue hover:text-neon-pink font-bold transition duration-300 ease-in-out block flex-grow">08 // Conceitos Adicionais</a>
+                     <button class="submenu-toggle text-neon-blue hover:text-neon-pink transition duration-300 ease-in-out">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+                 <ul class="submenu ml-4 space-y-2 text-neon-blue/80 text-sm">
+                     <li><a href="#concept-poll-proposal" class="hover:text-neon-pink transition duration-300 ease-in-out block">Poll vs. Proposal</a></li> {# Links para IDs específicos dentro da seção #}
+                     <li><a href="#concept-choices" class="hover:text-neon-pink transition duration-300 ease-in-out block">Options (Choices)</a></li>
+                     <li><a href="#concept-votes" class="hover:text-neon-pink transition duration-300 ease-in-out block">Votes</a></li>
+                 </ul>
+             </div>
+
+        </nav>
+
+         {# Footer da barra lateral (opcional) #}
+         <div class="mt-auto pt-6 text-center text-neon-blue/40 text-xs border-t border-neon-blue/10">
+             <p>Protocolos de Acesso v1.0</p>
+         </div>
+
+    </aside>
+
+    <main class="main-content flex-grow p-6 md:ml-64"> {# Adiciona margem esquerda para dar espaço à barra lateral #}
+
+        <button id="sidebar-toggle" class="md:hidden fixed top-4 left-4 z-50 bg-neon-pink text-deep-space p-2 rounded-md shadow-lg">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        {# O Header original da página principal #}
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-neon-pink glitch-effect">
+                <span class="block">CYBER CIVICS</span>
+                <span class="block text-2xl md:text-3xl text-neon-blue mt-2">// API Documentation</span>
+            </h1>
+            <p class="mt-4 text-glitch-red">Protocol Online // Version 1.0 // Status: Active</p>
+        </header>
+
+        {# Mantenha todas as suas seções <section id="..."> aqui #}
+
         <section id="overview" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">01 // Visão Geral</h2>
             <p class="text-neon-blue/80">
@@ -117,7 +216,7 @@
                 Os terminais da API Cyber Civics permitem a interação com os recursos do sistema. Todos os pacotes de dados são transmitidos no formato <span class="text-neon-pink font-bold">JSON</span>.
             </p>
 
-            <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.1 Autenticação e Registro</h3>
+            <h3 id="endpoint-auth" class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.1 Autenticação e Registro</h3> {# Adicionado ID para link direto #}
 
             <div id="endpoint-register" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
@@ -201,7 +300,7 @@
                 </pre>
             </div>
 
-            <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.2 Gerenciamento de Enquetes/Propostas</h3>
+            <h3 id="endpoint-polls" class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.2 Gerenciamento de Enquetes/Propostas</h3> {# Adicionado ID para link direto #}
 
             <div id="endpoint-list-polls" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
@@ -526,7 +625,7 @@
             </div>
 
 
-            <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.3 Gerenciamento de Opções de Voto (Choices)</h3>
+            <h3 id="endpoint-choices" class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.3 Gerenciamento de Opções de Voto (Choices)</h3> {# Adicionado ID para link direto #}
 
             <div id="endpoint-create-choice" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
@@ -748,7 +847,7 @@
             </div>
 
 
-            <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.4 Votação</h3>
+            <h3 id="endpoint-voting" class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.4 Votação</h3> {# Adicionado ID para link direto #}
 
             <div id="endpoint-vote" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
                 <div class="flex items-center mb-3">
@@ -799,9 +898,9 @@
                 </div>
             </div>
 
-             <h3 class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.5 Visualização de Resultados</h3>
+             <h3 id="endpoint-results" class="text-2xl font-semibold mt-8 mb-4 text-neon-blue">// 5.5 Visualização de Resultados</h3> {# Adicionado ID para link direto #}
 
-            <div id="endpoint-results" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50">
+            <div id="endpoint-results-detail" class="mb-8 p-4 border border-neon-blue/30 rounded-md bg-dark-synth/50"> {# Adicionado ID para link direto #}
                 <div class="flex items-center mb-3">
                     <span class="px-3 py-1 bg-blue-600 text-white text-sm font-bold rounded mr-3">GET</span>
                     <code class="text-neon-blue text-lg break-words">/api/polls/{id}/results/</code>
@@ -859,7 +958,7 @@
                 Esta seção descreve a estrutura dos pacotes de dados <span class="text-neon-pink font-bold">JSON</span> frequentemente transmitidos nas respostas da API, serializados a partir dos modelos internos do sistema.
             </p>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Poll/Proposal Object</h3>
+            <h3 id="data-structure-poll" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Poll/Proposal Object</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-2">
                 Representa uma enquete ou proposta. Inclui metadados, criador, status, tipo e opções associadas.
             </p>
@@ -883,7 +982,7 @@
 }
             </pre>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Choice Object</h3>
+            <h3 id="data-structure-choice" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Choice Object</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-2">
                 Representa uma opção de voto.
             </p>
@@ -895,7 +994,7 @@
 }
             </pre>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Vote Object</h3>
+            <h3 id="data-structure-vote" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Vote Object</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-2">
                 Representa um voto individual registrado (visto principalmente no retorno de <code class="text-glitch-red">POST /api/polls/{id}/vote/</code>).
             </p>
@@ -909,7 +1008,7 @@
 }
             </pre>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Result Item Object</h3>
+            <h3 id="data-structure-result" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Result Item Object</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-2">
                 Representa o resultado agregado para uma única opção de voto (visto em <code class="text-glitch-red">GET /api/polls/{id}/results/</code>).
             </p>
@@ -928,7 +1027,7 @@
                 A API segue os códigos de status <span class="text-neon-pink font-bold">HTTP padrão</span> para indicar o resultado das requisições. Em caso de falha, o corpo da resposta geralmente conterá detalhes em formato <span class="text-neon-pink font-bold">JSON</span> explicando a natureza do problema.
             </p>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 400 Bad Request</h3>
+            <h3 id="error-400" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 400 Bad Request</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-2">
                 Indica que a requisição é inválida devido a dados incorretos, formato inadequado ou falha em validações de negócio (ex: votar em enquete inativa, votar duas vezes). O corpo da resposta conterá detalhes sobre o erro.
             </p>
@@ -939,7 +1038,7 @@
 }
             </pre>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 401 Unauthorized</h3>
+            <h3 id="error-401" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 401 Unauthorized</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-2">
                 Ocorre quando a requisição exige autenticação, mas nenhum token válido foi fornecido no cabeçalho <code class="text-glitch-red">Authorization</code>.
             </p>
@@ -961,7 +1060,7 @@
             </pre>
 
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 403 Forbidden</h3>
+            <h3 id="error-403" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 403 Forbidden</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-2">
                 Indica que o usuário autenticado não possui permissão para executar a ação solicitada no recurso específico (ex: usuário comum tentando excluir uma enquete de administrador).
             </p>
@@ -978,7 +1077,7 @@
             </pre>
 
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 404 Not Found</h3>
+            <h3 id="error-404" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// 404 Not Found</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-2">
                 Ocorre quando o recurso solicitado (ex: uma enquete com um ID específico) não foi localizado no sistema.
             </p>
@@ -995,33 +1094,114 @@
                 Alguns conceitos fundamentais para entender a arquitetura e o funcionamento da API Cyber Civics:
             </p>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Poll vs. Proposal</h3>
+            <h3 id="concept-poll-proposal" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Poll vs. Proposal</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-4">
                 No back-end, ambos são representados pelo mesmo modelo de dados (<code class="text-glitch-red">Poll</code>). A distinção entre uma enquete oficial e uma proposta de usuário é feita através do campo booleano <code class="text-glitch-red">is_proposal</code> (<code class="text-glitch-red">false</code> para enquetes criadas por Administradores, <code class="text-glitch-red">true</code> para propostas criadas por Usuários Comuns).
             </p>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Options (Choices)</h3>
+            <h3 id="concept-choices" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Options (Choices)</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-4">
                 As opções de voto são representadas pelo modelo <code class="text-glitch-red">Choice</code>. Cada opção está associada a uma <code class="text-glitch-red">Poll</code> específica. Opções padrão como "Concordo", "Discordo" e "Neutro" são automaticamente adicionadas ao criar uma nova enquete ou proposta.
             </p>
 
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Votes</h3>
+            <h3 id="concept-votes" class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Votes</h3> {# Adicionado ID para link direto #}
             <p class="text-neon-blue/80 mb-4">
                 O modelo <code class="text-glitch-red">Vote</code> registra cada voto individual. Ele conecta um <code class="text-glitch-red">User</code> a uma <code class="text-glitch-red">Choice</code> específica dentro de uma <code class="text-glitch-red">Poll</code>. A regra de negócio garante que um usuário só possa registrar um voto por enquete/proposta.
             </p>
         </section>
-        
-        
+
+
+        {# O footer original foi movido para dentro do main content para rolar com ele #}
+        <footer class="mt-12 text-center text-neon-blue/60 text-sm">
+            <p>&copy; 2025 Cyber Civics // Documentação de API // Forjado no Ciberespaço</p>
+        </footer>
+
     </main>
-    
-    <footer class="mt-12 text-center text-neon-blue/60 text-sm">
-        <p>&copy; 2025 Cyber Civics // Documentação de API // Forjado no Ciberespaço</p>
-    </footer>
-    
+
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-neon-pink text-deep-space p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+
     <script>
         // Código JS para animações (se necessário)
         // Por enquanto, pode ficar vazio ou com scripts simples
+
+        // Lógica para o botão Voltar ao Topo
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // Mostra o botão quando a página rola para baixo
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) { // Mostra o botão após rolar 200px
+                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        // Rola suavemente para o topo ao clicar no botão
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Rolagem suave
+            });
+        });
+
+        // Lógica para o botão de alternância da barra lateral (mobile)
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.querySelector('aside.sidebar'); // Seleciona a barra lateral
+        const body = document.body; // Referência ao body para o overlay
+
+        if (sidebarToggle && sidebar) { // Verifica se os elementos existem
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('is-open'); // Alterna a classe is-open na sidebar
+                body.classList.toggle('sidebar-open'); // Alterna a classe no body para o overlay
+            });
+
+            // Opcional: Fechar sidebar clicando fora (no overlay)
+            body.addEventListener('click', (event) => {
+                 // Se a sidebar está aberta E o clique não foi dentro da sidebar ou no botão de toggle
+                if (body.classList.contains('sidebar-open') && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+                    sidebar.classList.remove('is-open');
+                    body.classList.remove('sidebar-open');
+                }
+            });
+        }
+
+        // Lógica para alternar a visibilidade dos submenus na barra lateral
+        const submenuToggles = document.querySelectorAll('.submenu-toggle'); // Seleciona todos os botões de toggle de submenu
+
+        submenuToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                // Encontra o submenu associado (geralmente o próximo elemento irmão)
+                const submenu = toggle.parentElement.nextElementSibling;
+
+                if (submenu && submenu.classList.contains('submenu')) {
+                    submenu.classList.toggle('is-open'); // Alterna a classe is-open no submenu
+                    toggle.classList.toggle('is-open'); // Alterna a classe is-open no botão de toggle (para girar o ícone)
+                }
+            });
+        });
+
+         // Fechar sidebar ao clicar em um link interno (útil em mobile)
+         const sidebarLinks = document.querySelectorAll('.sidebar a[href^="#"]'); // Seleciona todos os links internos na sidebar
+
+         sidebarLinks.forEach(link => {
+             link.addEventListener('click', () => {
+                 // Verifica se a sidebar está aberta em mobile
+                 if (window.innerWidth <= 768 && sidebar.classList.contains('is-open')) {
+                     sidebar.classList.remove('is-open');
+                     body.classList.remove('sidebar-open');
+                 }
+             });
+         });
+
     </script>
-    
+
 </body>
-</html>
+    </html>
+    

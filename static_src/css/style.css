@@ -1,59 +1,184 @@
-/* static_src/css/style.css */
+        /* Estilo básico para scrollbar (opcional, para um toque Cyberpunk) */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
 
-/* Estilo básico para scrollbar (opcional, para um toque Cyberpunk) */
-::-webkit-scrollbar {
-  width: 8px;
-}
+        ::-webkit-scrollbar-track {
+          background: #0f0e17; /* Fundo escuro */
+        }
 
-::-webkit-scrollbar-track {
-  background: #0f0e17; /* Fundo escuro */
-}
+        ::-webkit-scrollbar-thumb {
+          background: #00F0FF; /* Cor neon */
+          border-radius: 4px;
+        }
 
-::-webkit-scrollbar-thumb {
-  background: #00F0FF; /* Cor neon */
-  border-radius: 4px;
-}
+        ::-webkit-scrollbar-thumb:hover {
+          background: #FF40A0; /* Cor neon ao hover */
+        }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #FF40A0; /* Cor neon ao hover */
-}
+         /* Efeito Glitch para o título (usando CSS, sem JS nesta etapa) */
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 #00F0FF, -0.03em -0.04em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
+            }
+            14% {
+                text-shadow: 0.05em 0 0 #00F0FF, -0.03em -0.04em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
+            }
+            15% {
+                text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
+            }
+            49% {
+                 text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
+            }
+             50% {
+                text-shadow: 0.05em 0.03em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
+            }
+             99% {
+                text-shadow: 0.05em 0.03em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
+            }
+             100% {
+                text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
+            }
+        }
 
-/* Efeito Glitch para o título */
-@keyframes glitch {
-    0% {
-        text-shadow: 0.05em 0 0 #00F0FF, -0.03em -0.04em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
-    }
-    14% {
-        text-shadow: 0.05em 0 0 #00F0FF, -0.03em -0.04em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
-    }
-    15% {
-        text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
-    }
-    49% {
-         text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
-    }
-     50% {
-        text-shadow: 0.05em 0.03em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
-    }
-     99% {
-        text-shadow: 0.05em 0.03em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
-    }
-     100% {
-        text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
-    }
-}
+        .glitch-effect {
+            animation: glitch 1s linear infinite;
+        }
 
-.glitch-effect {
-    animation: glitch 1s linear infinite;
-}
+        /* Adiciona rolagem suave para links de âncora */
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* Adiciona rolagem suave para links de âncora */
-html {
-    scroll-behavior: smooth;
-}
+        /* Estilos para a barra lateral em telas menores */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed; /* Mantém fixa em mobile para poder deslizar */
+                top: 0;
+                left: -256px; /* Oculta fora da tela pela largura exata */
+                width: 256px; /* Largura fixa em mobile */
+                max-width: 100vw; /* Garante que não exceda a largura da viewport */
+                height: 100vh; /* Altura total da viewport */
+                flex-direction: column; /* Garante que os itens internos fiquem em coluna */
+                transition: left 0.3s ease-in-out; /* Adiciona transição suave */
+                padding-top: 4rem; /* Adiciona padding no topo para não ficar sob o botão de toggle */
+                overflow-y: auto; /* Permite rolagem interna */
+                /* Adicionado box-sizing para incluir padding na largura total */
+                box-sizing: border-box;
+            }
 
-/* Exemplo de regra para um elemento específico, se houvesse style="..." */
-/* .minha-classe-customizada {
-    margin-top: 20px;
-    padding: 10px;
-} */
+            .sidebar.is-open {
+                left: 0; /* Move a barra lateral para a tela quando a classe is-open está presente */
+            }
+
+            .main-content {
+                margin-left: 0; /* Remove margem esquerda em mobile */
+                padding-top: 4rem; /* Adiciona padding no topo do conteúdo principal para não ficar sob o botão de toggle */
+                /* Adicionado box-sizing para incluir padding na largura total */
+                box-sizing: border-box;
+                width: 100%; /* Garante que ocupe a largura total disponível */
+                overflow-x: hidden; /* Esconde qualquer conteúdo que tente transbordar horizontalmente */
+            }
+
+             .sidebar .submenu {
+                /* display: none; Removido, o JS controlará isso */
+                max-height: 0; /* Controlado por JS para animação */
+                overflow: hidden; /* Controlado por JS para animação */
+                transition: max-height 0.3s ease-in-out; /* Adicionado para animação */
+            }
+
+             .submenu.is-open {
+                max-height: 500px; /* Altura máxima para a transição (ajuste se necessário) */
+             }
+
+             /* Overlay escuro quando a sidebar está aberta */
+            body.sidebar-open::after {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 40; /* Abaixo da sidebar (z-50) */
+                pointer-events: auto; /* Permite clicar no overlay para fechar */
+            }
+        }
+
+
+        /* Estilos para telas médias e maiores (desktop) */
+        @media (min-width: 769px) {
+             .sidebar {
+                position: fixed; /* Fixa em desktop */
+                top: 0;
+                left: 0;
+                height: 100vh; /* Altura total */
+                width: 256px; /* Largura fixa */
+                flex-direction: column; /* Itens em coluna */
+                overflow-y: auto; /* Rolagem interna */
+                border-right: 1px solid rgba(0, 240, 255, 0.3); /* Borda direita */
+                padding: 1.5rem; /* Padding */
+                /* Adicionado box-sizing para incluir padding na largura total */
+                box-sizing: border-box;
+             }
+
+             .main-content {
+                margin-left: 256px; /* Margem esquerda igual à largura da sidebar */
+                padding: 1.5rem; /* Padding */
+                padding-top: 6rem; /* Ajuste o padding top para acomodar o header principal */
+                /* Adicionado box-sizing para incluir padding na largura total */
+                box-sizing: border-box;
+                width: auto; /* Permite que ocupe o espaço restante */
+                overflow-x: hidden; /* Esconde qualquer conteúdo que tente transbordar horizontalmente */
+             }
+
+             #sidebar-toggle {
+                 display: none !important; /* Oculta o botão de toggle em desktop */
+             }
+
+             /* Garante que submenus estejam visíveis em telas grandes onde a sidebar é fixa */
+            .submenu {
+                display: block !important; /* Força a exibição em desktop */
+                max-height: none !important; /* Remove a restrição de altura */
+                overflow: visible !important; /* Permite que o conteúdo seja visível */
+                transition: none !important; /* Remove transição em desktop */
+            }
+             .submenu-toggle {
+                display: none !important; /* Oculta o botão de toggle em desktop */
+             }
+        }
+
+        /* Ajuste o padding do body para telas pequenas para não ficar sob o botão de toggle */
+        @media (max-width: 768px) {
+            body {
+                padding: 0; /* Remove padding do body em mobile, o main-content e sidebar já têm */
+            }
+        }
+
+        /* Remova o padding do body em telas grandes, pois o main-content já tem */
+        @media (min-width: 769px) {
+            body {
+                padding: 0;
+            }
+        }
+
+        /* Estilo para o ícone do botão de toggle do submenu quando o submenu está aberto */
+        .submenu-toggle.is-open svg {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+
+        /* Adicionado para garantir que os contêineres de conteúdo respeitem a largura */
+        .container {
+            width: 100%; /* Garante que ocupe a largura total do pai */
+            max-width: 100%; /* Garante que não transborde */
+            padding-left: 1.5rem; /* Adiciona padding interno */
+            padding-right: 1.5rem; /* Adiciona padding interno */
+            margin-left: auto; /* Centraliza com margens automáticas */
+            margin-right: auto; /* Centraliza com margens automáticas */
+        }
+
+        /* Ajuste para os blocos de código para evitar overflow em telas pequenas */
+        pre {
+            word-wrap: break-word; /* Quebra palavras longas */
+            white-space: pre-wrap; /* Mantém quebras de linha e espaços */
+        }

@@ -6,29 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Civics API Docs // Protocol Online</title>
     <link rel="stylesheet" href="{% static 'output.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> {# Ajuste o caminho se style.css estiver em outro local #}
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <style>
-        /* Estilo básico para scrollbar (opcional, para um toque Cyberpunk) */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: #0f0e17; /* Fundo escuro */
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: #00F0FF; /* Cor neon */
-          border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: #FF40A0; /* Cor neon ao hover */
-        }
-    </style>
 </head>
-<body class="bg-deep-space text-neon-blue font-cyber leading-relaxed p-6 min-h-screen flex flex-col">
-
+<body class="bg-deep-space text-neon-blue font-cyber leading-relaxed p-6 min-h-screen flex flex-col pt-20">
+    
+    <nav class="fixed top-0 left-0 w-full bg-deep-space bg-opacity-90 backdrop-blur-sm z-50 p-4 flex justify-center items-center border-b border-neon-blue/30">
+        <a href="#overview" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">01 // Visão Geral</a>
+        <a href="#base-url" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">02 // URL Base</a>
+    </nav>
+    
     <header class="text-center mb-12">
         <h1 class="text-4xl md:text-6xl font-bold text-neon-pink glitch-effect">
             <span class="block">CYBER CIVICS</span>
@@ -36,7 +23,7 @@
         </h1>
         <p class="mt-4 text-glitch-red">Protocol Online // Version 1.0 // Status: Active</p>
     </header>
-
+    
     <main class="flex-grow container mx-auto">
         <section id="overview" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">01 // Visão Geral</h2>
@@ -44,31 +31,31 @@
                 A API Cyber Civics é a espinha dorsal digital para o gerenciamento de interações cívicas no ciberespaço, utilizando o poder do Django REST Framework. Ela opera em um ecossistema focado em <span class="text-neon-pink font-bold">gerenciamento de usuários</span>, a criação e moderação de <span class="text-neon-pink font-bold">enquetes/propostas digitais</span>, a validação de <span class="text-neon-pink font-bold">votos eletrônicos</span> e a projeção de <span class="text-neon-pink font-bold">resultados em tempo real</span>. Nosso sistema de segurança é estratificado por <span class="text-glitch-red font-bold">papéis de usuário</span> (Administrador e Usuário Comum), garantindo acesso controlado aos dados sensíveis.
             </p>
         </section>
-
+        
         <section id="base-url" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
-             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">02 // URL Base de Acesso</h2>
-             <p class="text-neon-blue/80 mb-4">
-                 Todos os pacotes de dados e requisições para os terminais listados adiante devem ser prefixados pela URL base do sistema.
-             </p>
-             <div class="bg-dark-synth p-4 rounded-md overflow-x-auto">
-                 <code class="text-glitch-red break-words">http://127.0.0.1:8000/api/</code>
-             </div>
-             <p class="mt-2 text-neon-blue/60 text-sm italic">
-                 // Nota do Sistema: Em ambientes de implantação (stage/produção), esta URL sofrerá reconfiguração.
-             </p>
+            <h2 class="text-3xl font-semibold mb-4 text-neon-pink">02 // URL Base de Acesso</h2>
+            <p class="text-neon-blue/80 mb-4">
+                Todos os pacotes de dados e requisições para os terminais listados adiante devem ser prefixados pela URL base do sistema.
+            </p>
+            <div class="bg-dark-synth p-4 rounded-md overflow-x-auto">
+                <code class="text-glitch-red break-words">http://127.0.0.1:8000/api/</code>
+            </div>
+            <p class="mt-2 text-neon-blue/60 text-sm italic">
+                // Nota do Sistema: Em ambientes de implantação (stage/produção), esta URL sofrerá reconfiguração.
+            </p>
         </section>
-
-
-        </main>
-
+        
+        
+    </main>
+    
     <footer class="mt-12 text-center text-neon-blue/60 text-sm">
         <p>&copy; 2025 Cyber Civics // Documentação de API // Forjado no Ciberespaço</p>
     </footer>
-
+    
     <script>
         // Código JS para animações (se necessário)
         // Por enquanto, pode ficar vazio ou com scripts simples
     </script>
-
+    
 </body>
 </html>

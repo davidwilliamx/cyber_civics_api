@@ -1,0 +1,59 @@
+/* static_src/css/style.css */
+
+/* Estilo básico para scrollbar (opcional, para um toque Cyberpunk) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0e17; /* Fundo escuro */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00F0FF; /* Cor neon */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF40A0; /* Cor neon ao hover */
+}
+
+/* Efeito Glitch para o título */
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 #00F0FF, -0.03em -0.04em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
+    }
+    14% {
+        text-shadow: 0.05em 0 0 #00F0FF, -0.03em -0.04em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
+    }
+    15% {
+        text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
+    }
+    49% {
+         text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
+    }
+     50% {
+        text-shadow: 0.05em 0.03em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
+    }
+     99% {
+        text-shadow: 0.05em 0.03em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, 0.02em 0.07em 0 #FF3131;
+    }
+     100% {
+        text-shadow: -0.05em -0.02em 0 #00F0FF, 0.04em 0.03em 0 #FF40A0, -0.02em -0.06em 0 #FF3131;
+    }
+}
+
+.glitch-effect {
+    animation: glitch 1s linear infinite;
+}
+
+/* Adiciona rolagem suave para links de âncora */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Exemplo de regra para um elemento específico, se houvesse style="..." */
+/* .minha-classe-customizada {
+    margin-top: 20px;
+    padding: 10px;
+} */

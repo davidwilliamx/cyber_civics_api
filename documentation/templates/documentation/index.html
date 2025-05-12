@@ -14,8 +14,11 @@
     <nav class="fixed top-0 left-0 w-full bg-deep-space bg-opacity-90 backdrop-blur-sm z-50 p-4 flex justify-center items-center border-b border-neon-blue/30">
         <a href="#overview" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">01 // Visão Geral</a>
         <a href="#base-url" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">02 // URL Base</a>
+        <a href="#authentication" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">03 // Autenticação</a>
+        <a href="#roles-permissions" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">04 // Papéis e Permissões</a>
+        {# Ex: <a href="#endpoints" class="text-neon-blue hover:text-neon-pink font-bold mx-4 transition duration-300 ease-in-out">05 // Endpoints</a> #}
     </nav>
-    
+
     <header class="text-center mb-12">
         <h1 class="text-4xl md:text-6xl font-bold text-neon-pink glitch-effect">
             <span class="block">CYBER CIVICS</span>
@@ -23,7 +26,7 @@
         </h1>
         <p class="mt-4 text-glitch-red">Protocol Online // Version 1.0 // Status: Active</p>
     </header>
-    
+
     <main class="flex-grow container mx-auto">
         <section id="overview" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">01 // Visão Geral</h2>
@@ -31,18 +34,78 @@
                 A API Cyber Civics é a espinha dorsal digital para o gerenciamento de interações cívicas no ciberespaço, utilizando o poder do Django REST Framework. Ela opera em um ecossistema focado em <span class="text-neon-pink font-bold">gerenciamento de usuários</span>, a criação e moderação de <span class="text-neon-pink font-bold">enquetes/propostas digitais</span>, a validação de <span class="text-neon-pink font-bold">votos eletrônicos</span> e a projeção de <span class="text-neon-pink font-bold">resultados em tempo real</span>. Nosso sistema de segurança é estratificado por <span class="text-glitch-red font-bold">papéis de usuário</span> (Administrador e Usuário Comum), garantindo acesso controlado aos dados sensíveis.
             </p>
         </section>
-        
+
         <section id="base-url" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
-            <h2 class="text-3xl font-semibold mb-4 text-neon-pink">02 // URL Base de Acesso</h2>
+             <h2 class="text-3xl font-semibold mb-4 text-neon-pink">02 // URL Base de Acesso</h2>
+             <p class="text-neon-blue/80 mb-4">
+                 Todos os pacotes de dados e requisições para os terminais listados adiante devem ser prefixados pela URL base do sistema.
+             </p>
+             <div class="bg-dark-synth p-4 rounded-md overflow-x-auto">
+                 <code class="text-glitch-red break-words">http://127.0.0.1:8000/api/</code>
+             </div>
+             <p class="mt-2 text-neon-blue/60 text-sm italic">
+                 // Nota do Sistema: Em ambientes de implantação (stage/produção), esta URL sofrerá reconfiguração.
+             </p>
+        </section>
+
+        <section id="authentication" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
+            <h2 class="text-3xl font-semibold mb-4 text-neon-pink">03 // Autenticação</h2>
             <p class="text-neon-blue/80 mb-4">
-                Todos os pacotes de dados e requisições para os terminais listados adiante devem ser prefixados pela URL base do sistema.
+                A API Cyber Civics utiliza o protocolo de segurança <span class="text-neon-pink font-bold">Token Authentication</span>, fornecido pelo Django REST Framework.
             </p>
-            <div class="bg-dark-synth p-4 rounded-md overflow-x-auto">
-                <code class="text-glitch-red break-words">http://127.0.0.1:8000/api/</code>
+            <p class="text-neon-blue/80 mb-4">
+                Após uma conexão bem-sucedida (login), o sistema emitirá um <span class="text-glitch-red font-bold">token de acesso único</span> para o usuário autenticado.
+            </p>
+            <p class="text-neon-blue/80 mb-4">
+                Este token deve ser incluído no cabeçalho <code class="text-glitch-red font-bold">Authorization</code> de todas as requisições subsequentes que necessitam de validação de identidade.
+            </p>
+            <p class="text-neon-blue/80 mb-4">
+                O formato do cabeçalho de autorização é padronizado:
+            </p>
+            <div class="bg-dark-synth p-4 rounded-md overflow-x-auto mb-4">
+                <code class="text-glitch-red break-words">Authorization: Token SEU_TOKEN_AQUI</code>
             </div>
-            <p class="mt-2 text-neon-blue/60 text-sm italic">
-                // Nota do Sistema: Em ambientes de implantação (stage/produção), esta URL sofrerá reconfiguração.
+            <p class="text-neon-blue/80">
+                Substitua <code class="text-glitch-red font-bold">SEU_TOKEN_AQUI</code> pelo token recebido após o login.
             </p>
+        </section>
+
+        <section id="roles-permissions" class="mb-12 p-6 border border-neon-blue rounded-lg shadow-lg shadow-neon-blue/20">
+            <h2 class="text-3xl font-semibold mb-4 text-neon-pink">04 // Papéis e Permissões</h2>
+            <p class="text-neon-blue/80 mb-4">
+                O acesso aos recursos da API é controlado por um sistema de permissões baseado em <span class="text-neon-pink font-bold">papéis digitais</span>. Existem dois níveis principais de acesso:
+            </p>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Usuário Comum</h3>
+            <p class="text-neon-blue/80 mb-4">
+                O perfil de Usuário Comum possui as seguintes capacidades no sistema:
+            </p>
+            <ul class="list-disc list-inside text-neon-blue/80 ml-4 mb-6">
+                <li>Pode registrar-se e autenticar-se no sistema.</li>
+                <li>Pode visualizar a lista completa de enquetes e propostas.</li>
+                <li>Pode acessar os detalhes de qualquer enquete ou proposta específica.</li>
+                <li>Pode <span class="text-neon-pink font-bold">criar novas Propostas</span> (o campo <code class="text-glitch-red">is_proposal</code> é definido automaticamente como <code class="text-glitch-red">true</code>).</li>
+                <li>Pode adicionar opções de voto <span class="text-glitch-red font-bold">apenas</span> às propostas que ele mesmo iniciou.</li>
+                <li>Pode registrar um voto em enquetes ou propostas ativas e dentro do prazo (limitado a um voto por item).</li>
+                <li>Pode consultar os resultados de votação para qualquer enquete ou proposta.</li>
+                <li><span class="text-glitch-red font-bold">Não pode</span> criar enquetes oficiais (apenas propostas).</li>
+                <li><span class="text-glitch-red font-bold">Não pode</span> modificar ou remover enquetes ou propostas existentes, mesmo as suas próprias propostas.</li>
+                <li><span class="text-glitch-red font-bold">Não pode</span> gerenciar opções de voto de outros usuários ou enquetes oficiais através do endpoint <code class="text-glitch-red">/api/choices/</code> (exceto na criação, como dono da proposta).</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-3 text-neon-blue">// Administrador (<code class="text-glitch-red">is_staff=True</code>)</h3>
+            <p class="text-neon-blue/80 mb-4">
+                O perfil de Administrador detém controle total sobre os recursos da API:
+            </p>
+             <ul class="list-disc list-inside text-neon-blue/80 ml-4 mb-6">
+                <li>Pode autenticar-se no sistema.</li>
+                <li>Possui todas as permissões de visualização e votação de um Usuário Comum.</li>
+                <li>Pode <span class="text-neon-pink font-bold">criar novas Enquetes Oficiais</span> (o campo <code class="text-glitch-red">is_proposal</code> é definido automaticamente como <code class="text-glitch-red">false</code>).</li>
+                <li>Pode modificar e remover <span class="text-neon-pink font-bold">qualquer</span> enquete ou proposta no sistema.</li>
+                <li>Pode listar, visualizar detalhes, modificar e remover <span class="text-neon-pink font-bold">qualquer</span> opção de voto.</li>
+                <li>Pode adicionar opções de voto para <span class="text-neon-pink font-bold">qualquer</span> enquete ou proposta.</li>
+                <li>Pode finalizar enquetes (definindo o status <code class="text-glitch-red">is_active</code> para <code class="text-glitch-red">false</code>).</li>
+            </ul>
         </section>
         
         

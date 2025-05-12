@@ -1,4 +1,9 @@
+# Ignorar configurações específicas do ambiente e dados sensíveis
 .env
+local_settings.py # Django settings locais que podem conter segredos
+db.sqlite3        # Banco de dados SQLite local
+db.sqlite3-journal # Arquivo de journal do SQLite
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -28,8 +33,6 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -58,9 +61,8 @@ cover/
 
 # Django stuff:
 *.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+# local_settings.py e db.sqlite3 já movidos para a seção de dados sensíveis/ambiente
+# db.sqlite3-journal já movido para a seção de dados sensíveis/ambiente
 
 # Flask stuff:
 instance/
@@ -93,24 +95,24 @@ ipython_config.py
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
 #   having no cross-platform support, pipenv may install dependencies that don't work, or not
 #   install all needed dependencies.
-#Pipfile.lock
+#Pipfile.lock # Manter comentado para versionar o lock file em aplicações
 
 # UV
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
-#uv.lock
+#uv.lock # Manter comentado para versionar o lock file em aplicações
 
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
+#poetry.lock # Manter comentado para versionar o lock file em aplicações
 
 # pdm
 #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
+#pdm.lock # Manter comentado para versionar o lock file em aplicações
 #   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
 #   in version control.
 #   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
@@ -128,8 +130,7 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
-# Environments
-.env
+# Environments (incluindo venv)
 .venv
 env/
 venv/
@@ -166,10 +167,24 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+#.idea/ # Manter comentado se quiser versionar configurações básicas do projeto no IDE
 
 # Ruff stuff:
 .ruff_cache/
 
 # PyPI configuration file
 .pypirc
+
+# Node.js / npm / Frontend build artifacts
+node_modules/       # Diretório de dependências do Node.js
+dist/               # Diretório de build comum para frontend (se usar Vite/Webpack futuramente)
+npm-debug.log* # Logs de debug do npm
+yarn-debug.log* # Logs de debug do Yarn (se usar Yarn)
+yarn-error.log* # Logs de erro do Yarn
+pnpm-debug.log* # Logs de debug do pnpm (se usar pnpm)
+lerna-debug.log* # Logs de debug do Lerna (se usar Lerna)
+# Arquivos gerados pelo Tailwind CSS
+static_src/output.css # O arquivo CSS compilado pelo Tailwind (ajuste o caminho se for diferente)
+staticfiles/        # Diretório onde o Django coleta arquivos estáticos (se o seu STATIC_ROOT for 'staticfiles')
+
+rascunho
